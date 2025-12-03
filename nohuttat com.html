@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nohuttat Gıda A.Ş.</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1F6B4A; /* genel zemin yeşil */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ÜST ŞERİT (KIRMIZI) */
+    header {
+      background-color: #C72831;
+      color: #EDD8A0;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      width: 200px;
+      border-radius: 24px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #EDD8A0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background-color: #1F6B4A;
+      padding: 4px 8px;
+      border-radius: 8px;
+    }
+
+    /* ORTA ŞERİT (KREM – YAZILAR BURADA) */
+    .content-wrapper {
+      background-color: #ffffff;    /* krem şerit */
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 800px;
+      padding: 15px 15px 20px;
+    }
+
+    section {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #C72831;
+      margin-top: 10;
+    }
+
+    p, li {
+      color: #000000;
+      line-height: 1.5;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* MARKA LOGOLARI + ALT YAZI */
+   .brand-logos {
+  display: flex;
+  flex-wrap: nowrap;     /* taşmadan yan yana */
+  justify-content: center;
+  align-items: flex-start; /* üstten hizalama */
+  gap: 80px;               /* iki logo arası boşluk */
+  margin-top: 40px;
+}
+
+
+    .brand-item {
+      text-align: center;
+    }
+
+    .brand-item a {
+      text-decoration: none;
+    }
+
+    .brand-item-n img {
+  width: 250px;
+  height: 250px;       /* YÜKSEKLİĞİ SABİTLİYORUZ */
+  object-fit: contain; /* Oran bozulmasın */
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nohitto-logo {
+  width: 200px;      /* daha geniş */
+  height: 200px;      /* oranı koru */
+  object-fit: contain;
+  border-radius: 12px;
+}
+  .brand-item-c img {
+  width: 250px;
+  height: 250px;       /* YÜKSEKLİĞİ SABİTLİYORUZ */
+  object-fit: contain; /* Oran bozulmasın */
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+.coolme-logo {
+  width: 200px;        /* aynısı */
+  height: 200px;       /* yüksekliği sabitle */
+  object-fit: contain; /* oranı koru */
+  border-radius: 12px;
+}
+    .brand-caption {
+      font-weight: bold;
+      color: #C72831; /* paletten kırmızı */
+    }
+
+    /* ALT ŞERİT (YEŞİL) */
+    .bottom-strip {
+      background-color: #1F6B4A;
+      padding: 80px 10px 40px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #EDD8A0;
+    }
+
+    /* Linkler (içerik kısmı) */
+    a {
+      color: #1F6B4A;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* SEKME MANTIĞI: sadece aktif bölüm gözüksün */
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+    /* 📱 Mobil görünüm (iPhone & küçük ekranlar için) */
+@media (max-width: 600px) {
+
+  /* Genel alanlar */
+  main {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  header img {
+    width: 140px;   /* Logo küçülür */
+  }
+
+  nav a {
+    font-size: 16px;
+    margin: 0 8px;
+  }
+
+  /* Markalar logoları alt alta gelsin */
+  .brand-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand-item-n img,
+  .nohitto-logo {
+    width: 160px;
+    height: auto;    /* Mobilde oran düzgün olsun */
+  }
+ .brand-item-c img,
+  .coolme-logo {
+    width: 160px;
+    height: auto;    /* Mobilde oran düzgün olsun */
+  }
+  /* Başlıklar daha derli toplu olsun */
+  h2 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  /* Footer alanı daha rahat */
+  .bottom-strip {
+    padding: 40px 10px 20px;
+  }
+}
+
+  </style>
+</head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<body>
+
+  <!-- ÜST KIRMIZI ŞERİT -->
+  <header>
+    <img src="logo.png" alt="Nohuttat Gıda A.Ş. Logosu">
+    <nav>
+      <a href="#markalar" data-target="markalar">Markalar</a>
+      <a href="#hakkimizda" data-target="hakkimizda">Hakkımızda</a>
+      <a href="#iletisim" data-target="iletisim">İletişim</a>
+    </nav>
+  </header>
+
+  <!-- ORTA KREM ŞERİT (İÇERİK) -->
+  <div class="content-wrapper">
+    <main>
+
+      <!-- MARKALAR (ilk açılışta gözükecek bölüm) -->
+      <section id="markalar" class="content-section active">
+        <h2 style="text-align:center;">Markalarımız</h2>
+
+       <div class="brand-logos">
+
+  <!-- NOHITTO -->
+  <div class="brand-item-n">
+    <a href="https://www.nohittoburitto.com" target="_blank">
+      <img src="nohitto2.png" alt="Nohitto Buritto" class="nohitto-logo">
+
+    </a>
+    <div class="brand-caption">
+      Nohitto Buritto – Lezzetli Dürümler ve Atıştırmalıklar
+    </div>
+  </div>
+
+  <!-- COOL ME CUP -->
+  <div class="brand-item-c">
+    <a href="https://www.coolmecup.com" target="_blank">
+    <img src="coolme3.png" alt="Cool Me Cup" class="coolme-logo">
+
+    </a>
+    <div class="brand-caption">
+      Cool Me Cup – Freeze :) Fill :) Chill :D
+    </div>
+  </div>
+
+</div>
+
+      </section>
+
+      <!-- HAKKIMIZDA -->
+      <section id="hakkimizda" class="content-section">
+        <h2>Biz Kimiz?</h2>
+        <p><strong>Misyonumuz:</strong> Nohuttat Gıda A.Ş., nohutu yaratıcı formatlarla sunarak,
+          topraktan sofraya uzanan yolculukta sağlıklı ve eğlenceli lezzetler üretir.</p>
+        <p><strong>Vizyonumuz:</strong> Nohut bazlı yenilikçi ürünlerde, yerelde doğup
+          dünyaya açılan öncü marka olmak.</p>
+        <p>Nohuttat Gıda A.Ş., topraktan sağlığa uzanan yolda güvenilir lezzet ortağınızdır.</p>
+      </section>
+
+      <!-- İLETİŞİM -->
+      <section id="iletisim" class="content-section">
+        <h2>Bizimle İletişime Geçin</h2>
+
+        <p>
+          E-posta:
+          <a href="mailto:nohuttat@gmail.com">nohuttat@gmail.com</a>
+        </p>
+
+        <p>
+          Tel:
+          <a href="tel:+905326644886">+90 532 664 48 86 / +90 532 NOHİTTO</a>
+        </p>
+
+        <h3>Nohitto Buritto</h3>
+        <p>
+          Instagram:
+          <a href="https://www.instagram.com/nohitto_buritto/"  target="_blank">
+            @nohitto_buritto
+          </a>
+        </p>
+        <p>
+          TikTok:
+          <a href="https://www.tiktok.com/@nohitto_buritto/" target="_blank">
+            @nohitto_buritto
+          </a>
+        </p>
+
+        <h3>Cool Me Cup</h3>
+        <p>
+          Instagram:
+          <a href="https://www.instagram.com/cool_me_cup/" target="_blank">
+            @cool_me_cup
+          </a>
+        </p>
+        <p>
+          TikTok:
+          <a href="https://www.tiktok.com/@cool_me_cup/" target="_blank">
+            @cool_me_cup
+          </a>
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ALT YEŞİL ŞERİT -->
+  <div class="bottom-strip">
+    <footer>
+      © 2025 • Nohuttat Gıda A.Ş. – Tüm hakları saklıdır.
+    </footer>
+  </div>
+
+  <!-- SEKMELERİ YÖNETEN JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll(".content-section");
+      const links = document.querySelectorAll("nav a");
+
+      function showSection(id) {
+        sections.forEach(sec => {
+          sec.classList.toggle("active", sec.id === id);
+        });
+      }
+
+      // Sayfa açıldığında "markalar" aktif
+      showSection("markalar");
+
+      links.forEach(link => {
+        link.addEventListener("click", function(e) {
+          e.preventDefault(); // sayfanın zıplamasını engelle
+          const targetId = this.getAttribute("data-target");
+          showSection(targetId);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
