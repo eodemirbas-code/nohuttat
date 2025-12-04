@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Nohuttat Gıda A.Ş.</title>
 
+  <!-- Mobil cihazlar için doğru ölçek -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon (favicon.ico dosyası index.html ile aynı klasörde olmalı) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -53,9 +59,9 @@
       border-radius: 8px;
     }
 
-    /* ORTA ŞERİT (KREM – YAZILAR BURADA) */
+    /* ORTA ŞERİT (BEYAZ – YAZILAR BURADA) */
     .content-wrapper {
-      background-color: #ffffff;    /* krem şerit */
+      background-color: #ffffff;
       flex: 1;
       display: flex;
       justify-content: center;
@@ -63,7 +69,7 @@
 
     main {
       width: 100%;
-      max-width: 800px;
+      max-width: 700px;
       padding: 15px 15px 20px;
     }
 
@@ -73,11 +79,11 @@
 
     h2 {
       color: #C72831;
-      margin-top: 10;
+      margin-top: 10px;
     }
 
     p, li {
-      color: #000000;
+      color: #333;
       line-height: 1.5;
     }
 
@@ -86,65 +92,53 @@
     }
 
     /* MARKA LOGOLARI + ALT YAZI */
-   .brand-logos {
-  display: flex;
-  flex-wrap: nowrap;     /* taşmadan yan yana */
-  justify-content: center;
-  align-items: flex-start; /* üstten hizalama */
-  gap: 80px;               /* iki logo arası boşluk */
-  margin-top: 40px;
-}
-
+    .brand-logos {
+      display: flex;
+      flex-wrap: nowrap;       /* geniş ekranda yan yana */
+      justify-content: center;
+      align-items: flex-start;
+      gap: 80px;
+      margin-top: 20px;
+    }
 
     .brand-item {
       text-align: center;
+      max-width: 250px;
     }
 
     .brand-item a {
       text-decoration: none;
     }
 
-    .brand-item-n img {
-  width: 250px;
-  height: 250px;       /* YÜKSEKLİĞİ SABİTLİYORUZ */
-  object-fit: contain; /* Oran bozulmasın */
-  border-radius: 12px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.nohitto-logo {
-  width: 200px;      /* daha geniş */
-  height: 200px;      /* oranı koru */
-  object-fit: contain;
-  border-radius: 12px;
-}
-  .brand-item-c img {
-  width: 250px;
-  height: 250px;       /* YÜKSEKLİĞİ SABİTLİYORUZ */
-  object-fit: contain; /* Oran bozulmasın */
-  border-radius: 12px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  }
-.coolme-logo {
-  width: 200px;        /* aynısı */
-  height: 200px;       /* yüksekliği sabitle */
-  object-fit: contain; /* oranı koru */
-  border-radius: 12px;
-}
+    .brand-item img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .nohitto-logo {
+      width: 200px;
+      height: 200px;
+    }
+
+    .coolme-logo {
+      width: 150px;
+      height: 150px;
+    }
+
     .brand-caption {
       font-weight: bold;
       color: #C72831; /* paletten kırmızı */
+      font-size: 14px;
     }
 
     /* ALT ŞERİT (YEŞİL) */
     .bottom-strip {
       background-color: #1F6B4A;
-      padding: 80px 10px 40px;
+      padding: 40px 10px 20px;
     }
 
     footer {
@@ -171,57 +165,58 @@
     .content-section.active {
       display: block;
     }
-    /* 📱 Mobil görünüm (iPhone & küçük ekranlar için) */
-@media (max-width: 600px) {
 
-  /* Genel alanlar */
-  main {
-    padding: 20px 10px;
-    max-width: 100%;
-  }
+    /* ==========================
+       MOBİL İÇİN ÖZEL AYARLAR
+       ========================== */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 10px;
+      }
 
-  header img {
-    width: 140px;   /* Logo küçülür */
-  }
+      header img {
+        width: 150px;
+      }
 
-  nav a {
-    font-size: 16px;
-    margin: 0 8px;
-  }
+      nav a {
+        display: inline-block;
+        margin: 4px 8px;
+        font-size: 14px;
+      }
 
-  /* Markalar logoları alt alta gelsin */
-  .brand-logos {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+      main {
+        max-width: 100%;
+        padding: 12px 12px 16px;
+      }
 
-  .brand-item-n img,
-  .nohitto-logo {
-    width: 160px;
-    height: auto;    /* Mobilde oran düzgün olsun */
-  }
- .brand-item-c img,
-  .coolme-logo {
-    width: 160px;
-    height: auto;    /* Mobilde oran düzgün olsun */
-  }
-  /* Başlıklar daha derli toplu olsun */
-  h2 {
-    text-align: center;
-    font-size: 22px;
-  }
+      .brand-logos {
+        flex-direction: column;   /* logolar alt alta */
+        align-items: center;
+        gap: 24px;
+      }
 
-  /* Footer alanı daha rahat */
-  .bottom-strip {
-    padding: 40px 10px 20px;
-  }
-}
+      .nohitto-logo,
+      .coolme-logo {
+        width: 180px;
+        height: auto;           /* oranı koru */
+      }
 
+      .brand-caption {
+        font-size: 13px;
+        padding: 0 10px;
+      }
+
+      h2 {
+        font-size: 20px;
+        text-align: center;
+      }
+
+      p, li {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-
 <body>
 
   <!-- ÜST KIRMIZI ŞERİT -->
@@ -234,7 +229,7 @@
     </nav>
   </header>
 
-  <!-- ORTA KREM ŞERİT (İÇERİK) -->
+  <!-- ORTA BEYAZ ŞERİT (İÇERİK) -->
   <div class="content-wrapper">
     <main>
 
@@ -242,32 +237,29 @@
       <section id="markalar" class="content-section active">
         <h2 style="text-align:center;">Markalarımız</h2>
 
-       <div class="brand-logos">
+        <div class="brand-logos">
 
-  <!-- NOHITTO -->
-  <div class="brand-item-n">
-    <a href="https://www.nohittoburitto.com" target="_blank">
-      <img src="nohitto2.png" alt="Nohitto Buritto" class="nohitto-logo">
+          <!-- NOHITTO -->
+          <div class="brand-item">
+            <a href="https://www.nohittoburitto.com" target="_blank">
+              <img src="nohitto.png" alt="Nohitto Buritto" class="nohitto-logo">
+            </a>
+            <div class="brand-caption">
+              Nohitto Buritto – Lezzetli Dürümler ve Atıştırmalıklar
+            </div>
+          </div>
 
-    </a>
-    <div class="brand-caption">
-      Nohitto Buritto – Lezzetli Dürümler ve Atıştırmalıklar
-    </div>
-  </div>
+          <!-- COOL ME CUP -->
+          <div class="brand-item">
+            <a href="https://www.coolmecup.com" target="_blank">
+              <img src="coolme2.png" alt="Cool Me Cup" class="coolme-logo">
+            </a>
+            <div class="brand-caption">
+              Cool Me Cup – Freeze :) Fill :) Chill :D
+            </div>
+          </div>
 
-  <!-- COOL ME CUP -->
-  <div class="brand-item-c">
-    <a href="https://www.coolmecup.com" target="_blank">
-    <img src="coolme3.png" alt="Cool Me Cup" class="coolme-logo">
-
-    </a>
-    <div class="brand-caption">
-      Cool Me Cup – Freeze :) Fill :) Chill :D
-    </div>
-  </div>
-
-</div>
-
+        </div>
       </section>
 
       <!-- HAKKIMIZDA -->
